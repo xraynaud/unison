@@ -86,9 +86,15 @@ doinstall: buildexecutable
 	    echo "makefile variable NAME not bound"; \
 	    exit 1 \
           ; fi 
-	-mv $(INSTALLDIR)/$(NAME)$(EXEC_EXT) /tmp/$(NAME)-$(shell echo $$$$)
-	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)
-	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(MAJORVERSION)$(EXEC_EXT)
+	if [ -d $(UIMACDIR)/build/Default/Unison.app ]; then \
+	  mv -f /Applications/Unison.app /tmp/Unison-$(shell echo $$$$).app;\
+	  cp -r $(UIMACDIR)/build/Default/Unison.app /Applications;\
+	fi
+	if [ -f $(NAME)$(EXEC_EXT) ]; then \
+	  mv -f $(INSTALLDIR)/$(NAME)$(EXEC_EXT) /tmp/$(NAME)-$(shell echo $$$$);\
+	  cp $(NAME)$(EXEC_EXT) $(INSTALLDIR);\
+	  cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(MAJORVERSION)$(EXEC_EXT);\
+	fi
 
 ######################################################################
 # Demo
