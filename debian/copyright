@@ -1,0 +1,103 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: Benjamin Pierce <bcpierce@cis.upenn.edu>
+
+Files: *
+Copyright: 1999-2015, Benjamin Pierce et al
+License: GPL-3+
+
+Files: fsmonitor/linux/inotify*
+Copyright: 2006-2008, Vincent Hanquez et al
+License: LGPL-exc
+
+Files: ubase/myMap.ml ubase/uarg.mli
+Copyright: 1996, INRIA
+License: LGPL-exc
+
+Files: uimac*/ImageAndTextCell.*
+Copyright: 2001-2004, Apple Computer, Inc.
+License: Apple
+
+Files: debian/*
+Copyright: 2006-2009, Sylvain Le Gall
+           2012, Stéphane Glondu
+License: GPL-3+
+
+Files: debian/unison-gtk.svg*
+Copyright: 2007, Eric Lavarde
+License: GPL-3+
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 3 of
+ the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common-licenses/GPL-3 file.
+
+License: LGPL-exc
+ This file is distributed under the terms of the GNU Library General
+ Public License, with the special exception on linking described as
+ follows.
+ .
+ As a special exception to the GNU Library General Public License, you
+ may link, statically or dynamically, a "work that uses the Library"
+ with a publicly distributed version of the Library to produce an
+ executable file containing portions of the Library, and distribute
+ that executable file under terms of your choice, without any of the
+ additional requirements listed in clause 6 of the GNU Library General
+ Public License.  By "a publicly distributed version of the Library",
+ we mean either the unmodified Library as distributed by INRIA, or a
+ modified version of the Library that is distributed under the
+ conditions defined in clause 3 of the GNU Library General Public
+ License.  This exception does not however invalidate any other reasons
+ why the executable file might be covered by the GNU Library General
+ Public License.
+ .
+ On Debian systems, the complete text of the GNU Library General
+ Public License can be found in /usr/share/common-licenses/LGPL-2 file.
+
+License: Apple
+ This Apple software is supplied to you by Apple Computer,
+ Inc. ("Apple") in consideration of your agreement to the following
+ terms, and your use, installation, modification or redistribution of
+ this Apple software constitutes acceptance of these terms.  If you do
+ not agree with these terms, please do not use, install, modify or
+ redistribute this Apple software.
+ .
+ In consideration of your agreement to abide by the following terms,
+ and subject to these terms, Apple grants you a personal,
+ non-exclusive license, under Apple's copyrights in this original
+ Apple software (the "Apple Software"), to use, reproduce, modify and
+ redistribute the Apple Software, with or without modifications, in
+ source and/or binary forms; provided that if you redistribute the
+ Apple Software in its entirety and without modifications, you must
+ retain this notice and the following text and disclaimers in all such
+ redistributions of the Apple Software.  Neither the name, trademarks,
+ service marks or logos of Apple Computer, Inc. may be used to endorse
+ or promote products derived from the Apple Software without specific
+ prior written permission from Apple. Except as expressly stated in
+ this notice, no other rights or licenses, express or implied, are
+ granted by Apple herein, including but not limited to any patent
+ rights that may be infringed by your derivative works or by other
+ works in which the Apple Software may be incorporated.
+ .
+ The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+ MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+ THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS
+ USE AND OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+ .
+ IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT,
+ INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE,
+ REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE,
+ HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING
+ NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

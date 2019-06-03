@@ -1,0 +1,377 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH UNISON-2.51.2 1 "September 23, 2001"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+unison-2.51.2 \- a file-synchronization tool for Unix and Windows
+.SH SYNOPSIS
+.B unison-2.51.2
+.RI [ options ]
+.br
+.B unison-2.51.2
+root1 root2
+.RI [ options ]
+.br
+.B unison-2.51.2
+profilename
+.RI [ options ]
+.br
+.B unison-2.51.2-gtk
+.RI [ options ]
+.SH DESCRIPTION
+This manual page briefly documents Unison, and was written for the
+Debian GNU/Linux distribution because the original program does not
+have a manual page. For a full description, please refer to the
+inbuilt documentation or the manuals in /usr/share/doc/unison2.51.2-1/. The
+ binary has similar command-line options, but allows the user
+to select and create profiles and configure options from within the
+program.
+.PP
+Unison is a file-synchronization tool for Unix and Windows. It allows
+two replicas of a collection of files and directories to be stored on
+different hosts (or different disks on the same host), modified
+separately, and then brought up to date by propagating the changes in
+each replica to the other.
+.PP
+Unison offers several advantages over various synchronization methods
+such as CVS, Coda, rsync, Intellisync, etc. Unison can run on and
+synchronize between Windows and many UNIX platforms. Unison requires
+no root privileges, system access or kernel changes to function. Unison
+can synchronize changes to files and directories in both directions,
+on the same machine, or across a network using ssh or a direct
+socket connection.
+.PP
+Transfers are optimised using a version of the rsync protocol, making
+it ideal for slower links. Unison has a clear and precise specification,
+and is resilient to failure due to its careful handling of the replicas
+and its private structures.
+.PP
+The two roots can be specified using an URI or a path. The URI must follow the
+convention: protocol://[user@][host][:port][/path]. The protocol part can be
+file, socket, ssh or rsh.
+.SH OPTIONS
+All Unison options are long, starting with one dash (`-') only.
+A summary of options is included here. For a complete description,
+see the inbuilt documentation or the manuals in /usr/share/doc/unison2.51.2-1/.
+.TP
+.B \-auto
+automatically accept default (nonconflicting) actions
+.TP
+.B \-batch
+batch mode: ask no questions at all
+.TP
+.B \-doc xxx
+show documentation ('-doc topics' lists topics)
+.TP
+.B \-fat
+use appropriate options for FAT filesystems
+.TP
+.B \-group
+synchronize group attributes
+.TP
+.B \-ignore xxx
+add a pattern to the ignore list
+.TP
+.B \-ignorenot xxx
+add a pattern to the ignorenot list
+.TP
+.B \-nocreation xxx
+prevent file creations on one replica
+.TP
+.B \-nodeletion xxx
+prevent file deletions on one replica
+.TP
+.B \-noupdate xxx
+prevent file updates and deletions on one replica
+.TP
+.B \-owner
+synchronize owner
+.TP
+.B \-path xxx
+path to synchronize
+.TP
+.B \-perms n
+part of the permissions which is synchronized
+.TP
+.B \-root xxx
+root of a replica (should be used exactly twice)
+.TP
+.B \-silent
+print nothing except error messages
+.TP
+.B \-terse
+suppress status messages
+.TP
+.B \-testserver
+exit immediately after the connection to the server
+.TP
+.B \-times
+synchronize modification times
+.TP
+.B \-version
+print version and exit
+.TP
+.B \-addprefsto xxx
+file to add new prefs to
+.TP
+.B \-addversionno
+add version number to name of unison on server
+.TP
+.B \-atomic xxx
+add a pattern to the atomic list
+.TP
+.B \-backup xxx
+add a pattern to the backup list
+.TP
+.B \-backupcurr xxx
+add a pattern to the backupcurr list
+.TP
+.B \-backupcurrnot xxx
+add a pattern to the backupcurrnot list
+.TP
+.B \-backupdir xxx
+directory for storing centralized backups
+.TP
+.B \-backuploc xxx
+where backups are stored ('local' or 'central')
+.TP
+.B \-backupnot xxx
+add a pattern to the backupnot list
+.TP
+.B \-backupprefix xxx
+prefix for the names of backup files
+.TP
+.B \-backups
+keep backup copies of all files (see also 'backup')
+.TP
+.B \-backupsuffix xxx
+a suffix to be added to names of backup files
+.TP
+.B \-clientHostName xxx
+set host name of client
+.TP
+.B \-confirmbigdel
+ask about whole-replica (or path) deletes (default true)
+.TP
+.B \-confirmmerge
+ask for confirmation before committing results of a merge
+.TP
+.B \-contactquietly
+suppress the 'contacting server' message during startup
+.TP
+.B \-copymax n
+maximum number of simultaneous copyprog transfers
+.TP
+.B \-copyonconflict
+keep copies of conflicting files
+.TP
+.B \-copyprog xxx
+external program for copying large files
+.TP
+.B \-copyprogrest xxx
+variant of copyprog for resuming partial transfers
+.TP
+.B \-copyquoterem xxx
+add quotes to remote file name for copyprog (true/false/default)
+.TP
+.B \-copythreshold n
+use copyprog on files bigger than this (if >=0, in Kb)
+.TP
+.B \-debug xxx
+debug module xxx ('all' -> everything, 'verbose' -> more)
+.TP
+.B \-diff xxx
+set command for showing differences between files
+.TP
+.B \-dontchmod
+when set, never use the chmod system call
+.TP
+.B \-dumbtty
+do not change terminal settings in text UI
+.TP
+.B \-fastcheck xxx
+do fast update detection (true/false/default)
+.TP
+.B \-fastercheckUNSAFE
+skip computing fingerprints for new files (experts only!)
+.TP
+.B \-follow xxx
+add a pattern to the follow list
+.TP
+.B \-force xxx
+force changes from this replica to the other
+.TP
+.B \-forcepartial xxx
+add a pattern to the forcepartial list
+.TP
+.B \-halfduplex
+force half-duplex communication with the server
+.TP
+.B \-height n
+height (in lines) of main window in graphical interface
+.TP
+.B \-host xxx
+bind the socket to this host name in server socket mode
+.TP
+.B \-ignorearchives
+ignore existing archive files
+.TP
+.B \-ignorecase xxx
+identify upper/lowercase filenames (true/false/default)
+.TP
+.B \-ignoreinodenumbers
+ignore inode number changes when detecting updates
+.TP
+.B \-ignorelocks
+ignore locks left over from previous run (dangerous!)
+.TP
+.B \-immutable xxx
+add a pattern to the immutable list
+.TP
+.B \-immutablenot xxx
+add a pattern to the immutablenot list
+.TP
+.B \-key xxx
+define a keyboard shortcut for this profile (in some UIs)
+.TP
+.B \-killserver
+kill server when done (even when using sockets)
+.TP
+.B \-label xxx
+provide a descriptive string label for this profile
+.TP
+.B \-links xxx
+allow the synchronization of symbolic links (true/false/default)
+.TP
+.B \-log
+record actions in logfile (default true)
+.TP
+.B \-logfile xxx
+logfile name
+.TP
+.B \-maxbackups n
+number of backed up versions of a file
+.TP
+.B \-maxerrors n
+maximum number of errors before a directory transfer is aborted
+.TP
+.B \-maxsizethreshold n
+prevent transfer of files bigger than this (if >=0, in Kb)
+.TP
+.B \-maxthreads n
+maximum number of simultaneous file transfers
+.TP
+.B \-merge xxx
+add a pattern to the merge list
+.TP
+.B \-mountpoint xxx
+abort if this path does not exist
+.TP
+.B \-nocreationpartial xxx
+add a pattern to the nocreationpartial list
+.TP
+.B \-nodeletionpartial xxx
+add a pattern to the nodeletionpartial list
+.TP
+.B \-noupdatepartial xxx
+add a pattern to the noupdatepartial list
+.TP
+.B \-numericids
+don't map uid/gid values by user/group names
+.TP
+.B \-prefer xxx
+choose this replica's version for conflicting changes
+.TP
+.B \-preferpartial xxx
+add a pattern to the preferpartial list
+.TP
+.B \-repeat xxx
+synchronize repeatedly (text interface only)
+.TP
+.B \-retry n
+re-try failed synchronizations N times (text ui only)
+.TP
+.B \-rootalias xxx
+register alias for canonical root names
+.TP
+.B \-rsrc xxx
+synchronize resource forks (true/false/default)
+.TP
+.B \-rsync
+activate the rsync transfer mode (default true)
+.TP
+.B \-selftest
+run internal tests and exit
+.TP
+.B \-servercmd xxx
+name of unison executable on remote server
+.TP
+.B \-showarchive
+show 'true names' (for rootalias) of roots and archive
+.TP
+.B \-socket xxx
+act as a server on a socket
+.TP
+.B \-sortbysize
+list changed files by size, not name
+.TP
+.B \-sortfirst xxx
+add a pattern to the sortfirst list
+.TP
+.B \-sortlast xxx
+add a pattern to the sortlast list
+.TP
+.B \-sortnewfirst
+list new before changed files
+.TP
+.B \-sshargs xxx
+other arguments (if any) for remote shell command
+.TP
+.B \-sshcmd xxx
+path to the ssh executable
+.TP
+.B \-stream
+use a streaming protocol for transferring file contents (default true)
+.TP
+.B \-ui xxx
+select UI ('text' or 'graphic'); command-line only
+.TP
+.B \-unicode xxx
+assume Unicode encoding in case insensitive mode
+.TP
+.B \-watch
+when set, use a file watcher process to detect changes (default true)
+.TP
+.B \-xferbycopying
+optimize transfers using local copies (default true)
+.TP
+.B \-include xxx
+include a profile file's preferences
+.TP
+.B \-source xxx
+include a file's preferences
+.PP
+Some preferences are just boolean flags. Others take numeric or string
+arguments, indicated in the preferences list by n or xxx. Most of the
+string preferences can be given several times; the arguments are
+accumulated into a list internally.
+.SH SEE ALSO
+The program is documented fully in the in-built documentation and the
+manual, available as text in /usr/share/doc/unison2.51.2-1/.
+.SH AUTHOR
+Options are automatically extracted from `unison -help'. The rest of this
+manual page was written by Robert McQueen <robot101@debian.org>, for the Debian
+GNU/Linux system (but may be used by others).

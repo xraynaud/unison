@@ -1,0 +1,2 @@
+@UNISON@                                 /usr/bin/
+debian/@UNISON_PACKAGE@.completion.bash  /usr/share/bash-completion/completions/@UNISON_PACKAGE@
