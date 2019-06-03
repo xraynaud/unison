@@ -73,10 +73,10 @@ INSTALLDIR = $(HOME)/bin/
 # This has two names because on OSX the file INSTALL shadows the target 'install'!
 install: doinstall
 
-installtext: 
+installtext:
 	$(MAKE) -C .. installtext
 
-text: 
+text:
 	$(MAKE) -C .. text
 
 # Note that this is not needed (and doesn't work) for the OSX GUI version.
@@ -85,7 +85,7 @@ doinstall: buildexecutable
 	@if [ ! $(NAME) ]; then \
 	    echo "makefile variable NAME not bound"; \
 	    exit 1 \
-          ; fi 
+          ; fi
 	-mv $(INSTALLDIR)/$(NAME)$(EXEC_EXT) /tmp/$(NAME)-$(shell echo $$$$)
 	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)
 	cp $(NAME)$(EXEC_EXT) $(INSTALLDIR)$(NAME)-$(MAJORVERSION)$(EXEC_EXT)
@@ -203,7 +203,7 @@ prefsdocs: all
 	./$(NAME) -prefsdocs 2> prefsdocsjunk.tmp
 	mv -f prefsdocsjunk.tmp prefsdocs.tmp
 
-# For developers 
+# For developers
 runtest:
 	$(MAKE) NATIVE=false DEBUG=true text
 	./unison test
@@ -214,7 +214,7 @@ repeattest:
 
 selftest:
 	$(MAKE) all NATIVE=false DEBUG=true UISTYLE=text
-	./unison -selftest -ui text -batch 
+	./unison -selftest -ui text -batch
 
 selftestdebug:
 	$(MAKE) all NATIVE=false DEBUG=true UISTYLE=text
@@ -222,7 +222,7 @@ selftestdebug:
 
 selftestremote:
 	$(MAKE) all NATIVE=false DEBUG=true UISTYLE=text
-	./unison -selftest -ui text -batch test.tmp ssh://eniac.seas.upenn.edu/test.tmp 
+	./unison -selftest -ui text -batch test.tmp ssh://eniac.seas.upenn.edu/test.tmp
 
 testmerge:
 	$(MAKE) all NATIVE=false UISTYLE=text
@@ -342,7 +342,7 @@ tags:
 	-if [ -f "`which $(ETAGS)`" ]; then \
 	    $(ETAGS) *.mli */*.mli *.ml */*.ml */*.m *.c */*.c *.txt \
 	             *Makefile* \
-          ; fi 
+          ; fi
 
 all:: TAGS
 
@@ -357,6 +357,11 @@ clean::
 	-$(RM) -r obsolete
 	-$(RM) $(NAME) $(NAME).exe
 	-$(RM) $(NAME)-blob.o
+	-$(RM) fsmonitor/watchercommon.o
+	-$(RM) system/*.o
+	-$(RM) system/generic/*.o
+	-$(RM) lwt/generic/*.o
+	-$(RM) lwt/generic/*.cmx
 
 clean::
 	$(MAKE) -C ubase clean
@@ -372,7 +377,7 @@ endif
 checkin:
 	$(MAKE) -C .. checkin
 
-installremote: 
+installremote:
 	$(MAKE) UISTYLE=text
 	-unison eniac -path current/unison/trunk/src -batch
 	ssh eniac.seas.upenn.edu make -C current/unison/trunk/src installtext
@@ -386,4 +391,3 @@ installremote:
 strings.ml:
 	echo "(* Dummy strings.ml *)" > strings.ml
 	echo "let docs = []" >> strings.ml
-

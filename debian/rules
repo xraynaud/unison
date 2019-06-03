@@ -107,7 +107,7 @@ build/$(UNISON_PACKAGE)::
 clean::
 	-$(RM) '$(CURDIR)/$(UNISON)'
 	$(MAKE) clean
-	rm src/lwt/depend src/ubase/depend
+	rm src/lwt/depend src/ubase/depend 
 
 
 debian/unison-manual.txt: build/$(UNISON_PACKAGE)
